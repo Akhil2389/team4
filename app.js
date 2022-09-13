@@ -1,18 +1,11 @@
 
-const prompt = require("prompt");
-function add() {
-prompt.start();
+const app = require("express")();
 
-prompt.get(["num1", "num2"],
-function (err, res) {
-	if (err) {
-	console.log(err);
-	} else {
-	var sum = parseFloat(res.num1)
-		+ parseFloat(res.num2);
-	console.log("Sum of " + res.num1
-		+ " and " + res.num2 + " is " + sum);
-	}
+const PORT = process.env.PORT || 3000;
+
+app.get("",(req, res) => {
+    res.send("Speial team");
 });
-}
-add();
+app.listen(PORT, () => {
+    console.log(`App up at port ${PORT}`);
+});
